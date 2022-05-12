@@ -3,9 +3,12 @@ import {ReactComponent as Logo} from 'assets/logo.svg'
 import { Buscador } from './Buscador'
 import { useState } from 'react'
 import { Filtros } from './Filtros';
+import Ordenador from './Ordenador';
 
 export function Cardapio(){
     const [busca, setBusca] = useState('');
+    const [filtro, setFiltro] = useState<number | null>(null);
+
     return(
         <main>
             <nav className={styles.menu}>
@@ -20,7 +23,8 @@ export function Cardapio(){
                 <h3 className={styles.cardapio__titulo}>Cardápio</h3>
                 <Buscador busca={busca} setBusca = {setBusca} />
                 <div className={styles.cardapio__filtros}>
-                    <Filtros />
+                    <Filtros filtro = {filtro} setFiltro = {setFiltro}/>
+                    <Ordenador />
                 </div>
             </section>
         </main>

@@ -1,0 +1,22 @@
+[
+    {
+      "id": 1,
+      "nome": "",
+      "value": ""
+    },
+    {
+      "id": 2,
+      "nome": "Porção",
+      "value": "porcao"
+    },
+    {
+      "id": 3,
+      "nome": "Qtd. pessoas",
+      "value": "qtd_pessoas"
+    },
+    {
+      "id": 4,
+      "nome": "Preço",
+      "value": "preco"
+    }
+  ]
