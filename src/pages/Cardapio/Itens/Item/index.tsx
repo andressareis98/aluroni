@@ -1,29 +1,37 @@
-import logo from 'assets/logo.svg'
 import styles from './Item.module.scss'
+import cardapio from '../itens.json'
+import classNames from 'classnames'
 
-export function Item(){
+type Props = typeof cardapio[0]
+
+export function Item(props: Props){
+
+    const {title, description, category, size, serving, price, photo } = props ;
     return(
-        <div className={styles.item}>
-            <div className={styles.item__imagem}>
-                <img src={logo} alt="imagem"/>
+        <div className={ styles.item }>
+            <div className={ styles.item__imagem }>
+                <img src={ photo } alt={title}/>
             </div>
-            <div className={styles.item__descricao}>
-                <div className={styles.item__titulo}>
-                    <h2>Macarrão</h2>
-                    <p>Descrição do macarrão</p>
+            <div className={ styles.item__descricao }>
+                <div className={ styles.item__titulo }>
+                    <h2>{ title }</h2>
+                    <p>{ description }</p>
                 </div>
-                <div className={styles.item__tags}>
-                    <div className={styles.item__tipo}>
-                        Massa
+                <div className={ styles.item__tags }>
+                    <div className={classNames({
+                        [styles.item__tipo]: true,
+                        [styles[`item__tipo__${category.label.toLocaleLowerCase()}`]]: true
+                    })}>
+                        { category.label }
                     </div>
-                    <div className={styles.item__porcao}>
-                        400g
+                    <div className={ styles.item__porcao }>
+                        { size }
                     </div>
                     <div className={styles.item__qtdpessoas}>
-                        Serve 2 pessoas
+                        Serve { serving } pessoa{ serving === 1 ? '' : "s" }
                     </div>
                     <div className={styles.item__valor}>
-                        R$ 50,00
+                        R$ { price.toFixed(2) }
                     </div>
                 </div>
             </div>
