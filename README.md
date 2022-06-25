@@ -9,6 +9,10 @@ O projeto teve como objetivo aprofundar os seguintes conhecimentos:
 - Utilização de assets;
 - Filtros;
 - Ordenação;
+- React-router-dom;
+- Compartilhamento de estado entre rotas;
+- Nested routes;
+- Aplicação do ESlint no projeto;
 
 ---
 
